@@ -1,0 +1,128 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #2c3e50;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#search-bar {
+  position: relative;
+}
+
+#search-bar input {
+  padding: 0.5rem 1rem;
+  width: 300px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+#suggestions {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: rgb(0, 0, 0);
+  border: 1px solid #ddd;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  z-index: 2000;
+}
+
+#suggestions li {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eee;
+}
+
+#suggestions li:hover {
+  background: #38393d;
+}
+
+#container {
+  display: flex;
+  height: calc(100vh - 60px); /* rest after header */
+}
+
+#sidebar {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+#sidebar h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #1e3c72;
+}
+
+#map {
+  flex: 1;
+}
+
+#parking-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#parking-list li {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+#parking-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#parking-list li strong {
+  display: block;
+  font-size: 1rem;
+  color: #2a5298;
+  margin-bottom: 0.25rem;
+}
+
+#parking-list li .price {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-weight: 600;
+  color: #f39c12;
+}
+
+#parking-list li.suggested {
+  border: 2px solid #27ae60;
+  background: #eafaf1;
+}

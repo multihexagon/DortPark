@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DortPark – Smart Parking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">🚗 DortPark</div>
+    <div id="search-bar">
+      <input type="text" id="destination" placeholder="Search destination in Dortmund..." onkeyup="searchDestination()" />
+      <ul id="suggestions"></ul>
+    </div>
+  </header>
+
+  <div id="container">
+    <aside id="sidebar">
+      <h2>Nearby Parkings</h2>
+      <ul id="parking-list"></ul>
+    </aside>
+    <main id="map"></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
